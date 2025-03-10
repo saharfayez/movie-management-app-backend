@@ -3,12 +3,12 @@ package com.example.MovieManagementApp.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Entity
+@Table(name = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
-@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

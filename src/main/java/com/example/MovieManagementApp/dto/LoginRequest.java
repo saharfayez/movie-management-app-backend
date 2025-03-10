@@ -1,6 +1,5 @@
 package com.example.MovieManagementApp.dto;
 
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 

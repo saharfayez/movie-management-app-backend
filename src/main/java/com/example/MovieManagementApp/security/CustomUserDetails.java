@@ -2,7 +2,6 @@ package com.example.MovieManagementApp.security;
 
 import com.example.MovieManagementApp.model.User;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
