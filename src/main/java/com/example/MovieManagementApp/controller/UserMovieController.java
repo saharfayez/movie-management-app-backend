@@ -12,18 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("api/user/movies")
 public class UserMovieController {
 
     @Autowired
     MovieService movieService;
 
-    @GetMapping("/movies")
+    @GetMapping()
     public ResponseEntity<List<OmdbMovieResponse>> getAllMovies() {
         return ResponseEntity.ok(movieService.getAllMovies());
     }
 
-    @GetMapping("/movies/{imdbd}")
+    @GetMapping("/{imdbd}")
     public ResponseEntity<OmdbMovieResponse> getMovieById(@PathVariable("imdbd") String imdbID) {
         return ResponseEntity.ok(movieService.getMovieById(imdbID));
     }

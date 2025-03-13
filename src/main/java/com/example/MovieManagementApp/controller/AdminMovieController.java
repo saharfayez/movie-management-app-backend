@@ -25,8 +25,8 @@ public class AdminMovieController {
         return ResponseEntity.ok(omdbService.searchMovies(title));
     }
 
-    @PostMapping("/{imdbID}")
-    public ResponseEntity<OmdbMovieResponse> addMovie(@PathVariable String imdbID) {
+    @PostMapping()
+    public ResponseEntity<OmdbMovieResponse> addMovie(@RequestParam String imdbID) {
         return new ResponseEntity<>(movieService.addMovie(imdbID), HttpStatus.CREATED);
     }
 
@@ -34,6 +34,11 @@ public class AdminMovieController {
     public ResponseEntity<OmdbMovieResponse> deleteMovie(@PathVariable String imdbID) {
         movieService.removeMovie(imdbID);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<OmdbMovieResponse>> getAllMovies() {
+        return ResponseEntity.ok(movieService.getAllMovies());
     }
 
 }

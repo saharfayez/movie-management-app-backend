@@ -1,6 +1,7 @@
 package com.example.MovieManagementApp.config;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -12,14 +13,13 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Configuration
 public class MovieManagementConfig {
 
-    private String apiKey = "aaa66654";
+    @Value("${api-key}")
+    private String apiKey;
 
     @Bean
     ModelMapper modelMapper() {

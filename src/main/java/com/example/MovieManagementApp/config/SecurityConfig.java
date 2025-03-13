@@ -57,8 +57,9 @@ public class SecurityConfig {
                         .requestMatchers("/auth/login").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/user/**").hasRole("USER")
+                        .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
-                        )
+                )
                 .cors(cors -> cors.configurationSource(corsConfigurationSource))
                 .sessionManagement(session -> {
                     session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
